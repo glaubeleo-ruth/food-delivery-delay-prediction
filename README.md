@@ -1,6 +1,6 @@
 # 🛵 Food Delivery Delay Prediction (음식 배달 지연 예측)
 
-Machine-learning project that predicts whether a food order will be **delivered late**,
+Machine-learning project that predicts whether a food order will be delivered late,
 based on order, traffic, weather, and customer signals. Binary classification on a
 synthetic-but-realistic city-delivery dataset (~15,000 orders, ~9.5% delayed).
 
@@ -8,11 +8,11 @@ Authors: 강민혁 (20211720), 서정우 (20222828)
 
 ## Overview
  
-This project predicts whether a food delivery will arrive **late**, using details available
-at order time (distance, traffic, weather, time of day). It's a **binary classification**
+This project predicts whether a food delivery will arrive late, using details available
+at order time (distance, traffic, weather, time of day). It's a binary classification
 task — the model outputs "on-time" or "delayed" for each order.
  
-Two models are compared: a simple baseline (**KNN**) and a more powerful model (**XGBoost**).
+Two models are compared: a simple baseline (KNN) and a more powerful model (XGBoost).
 XGBoost wins by a wide margin, especially at catching the rare "delayed" cases — the harder
 and more operationally important class to predict.
 
@@ -34,7 +34,7 @@ XGBoost decisively outperforms KNN. Although KNN's accuracy looks high, its AUC-
 | Model    | Accuracy | AUC-ROC | Delayed F1 |
 |----------|:--------:|:-------:|:----------:|
 | KNN      |  90.13%  |  0.539  |    0.01    |
-| **XGBoost** | **97.77%** | **0.997** | **0.89** |
+| XGBoost | 97.77% | 0.997 | 0.89|
 
 XGBoost handles the 90.5% / 9.5% class imbalance via `scale_pos_weight` and still keeps
 high precision and recall on both classes.
@@ -52,12 +52,12 @@ high precision and recall on both classes.
   <br>
   <em>Figure 5: Confusion matrix — XGBoost predictions</em>
 </p>
-**Top predictive features:** delivery time, estimated delivery time, delivery speed,
+Top predictive features: delivery time, estimated delivery time, delivery speed,
 stress score, traffic level.
 
 ## How the models work
 
-**KNN (K-Nearest Neighbors)** — classifies an order by looking at the *k* most similar
+KNN (K-Nearest Neighbors) — classifies an order by looking at the *k* most similar
 past orders (based on distance, traffic, etc.) and taking a majority vote. Simple,
 intuitive, but struggles when one class (delayed orders) is rare — it gets outvoted
 by the majority class.
@@ -68,7 +68,7 @@ by the majority class.
   <em>Figure 1: KNN</em>
 </p>
 
-**XGBoost (Gradient Boosted Trees)** — builds many small decision trees in sequence,
+XGBoost (Gradient Boosted Trees) — builds many small decision trees in sequence,
 each one correcting the errors of the last. Handles class imbalance directly via
 `scale_pos_weight`, which tells the model to weigh mistakes on the rare "delayed"
 class more heavily. This is why it substantially outperforms KNN here.
@@ -79,7 +79,7 @@ class more heavily. This is why it substantially outperforms KNN here.
   <em>Figure 2: XGBoost</em>
 </p>
 
-**Top predictive features:** delivery time, estimated delivery time, delivery speed,
+Top predictive features: delivery time, estimated delivery time, delivery speed,
 stress score, traffic level.
 
 ## Repository structure
@@ -106,7 +106,7 @@ food-delivery-delay-prediction/
 
 ## Dataset
 
-This project uses the **Food Delivery Operations and Customer Analytics** dataset from
+This project uses the Food Delivery Operations and Customer Analytics dataset from
 Kaggle. It is not committed to the repo (it's gitignored).
 
 1. Download `food_delivery_analytics_cleaned.csv` from Kaggle.
@@ -148,14 +148,14 @@ jupyter notebook notebooks/delivery_delay_analysis.ipynb
   <em>Figure 3: Contents</em>
 </p>
 
-1. **Preprocessing** — drop `order_id`, median-impute numeric NaNs, mode-impute boolean
+1. Preprocessing — drop `order_id`, median-impute numeric NaNs, mode-impute boolean
    NaNs, cast booleans to int.
-2. **Feature engineering** — `stress_score` (traffic × weather), `is_peak_hour`
+2. Feature engineering — `stress_score` (traffic × weather), `is_peak_hour`
    (lunch/dinner windows), `delivery_speed` (distance ÷ time).
-3. **Split** — 80/20 stratified train/test.
-4. **Models** — KNN (k=5, on scaled features) and XGBoost (200 trees, depth 5,
+3. Split — 80/20 stratified train/test.
+4. Models — KNN (k=5, on scaled features) and XGBoost (200 trees, depth 5,
    `scale_pos_weight` for imbalance).
-5. **Evaluation** — accuracy, AUC-ROC, classification report, ROC curves, confusion
+5. Evaluation — accuracy, AUC-ROC, classification report, ROC curves, confusion
    matrix, and feature importance.
 
 ## License
