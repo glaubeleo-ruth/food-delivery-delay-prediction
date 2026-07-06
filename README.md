@@ -145,7 +145,7 @@ jupyter notebook notebooks/delivery_delay_analysis.ipynb
 <p align="center">
   <img width="500" height="300" alt="Contents" src="assets/Contents_visualization.png" />
   <br>
-  <em>Figure 3: Contents</em>
+  <em>Figure 5: Contents</em>
 </p>
 
 1. Preprocessing — drop `order_id`, median-impute numeric NaNs, mode-impute boolean
