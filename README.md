@@ -45,12 +45,12 @@ high precision and recall on both classes.
 <p align="center">
   <img width="800" height="400" alt="ROC Curve Comparison" src="assets/roc_curve_comparison.png" />
   <br>
-  <em>Figure 4: ROC curve — KNN vs XGBoost</em>
+  <em>Figure 1: ROC curve — KNN vs XGBoost</em>
 </p>
 <p align="center">
   <img width="800" height="600" alt="Confusion Matrix" src="assets/confusion_matrix.png" />
   <br>
-  <em>Figure 5: Confusion matrix — XGBoost predictions</em>
+  <em>Figure 2: Confusion matrix — XGBoost predictions</em>
 </p>
 Top predictive features: delivery time, estimated delivery time, delivery speed,
 stress score, traffic level.
@@ -65,7 +65,7 @@ by the majority class.
 <p align="center">
   <img width="500" height="300" alt="KNN Diagram" src="assets/KNN_diagram.png" />
   <br>
-  <em>Figure 1: KNN</em>
+  <em>Figure 3: KNN</em>
 </p>
 
 XGBoost (Gradient Boosted Trees) — builds many small decision trees in sequence,
@@ -76,7 +76,7 @@ class more heavily. This is why it substantially outperforms KNN here.
 <p align="center">
   <img width="500" height="300" alt="XGBoost Diagram" src="assets/XGBoost_diagram.png" />
   <br>
-  <em>Figure 2: XGBoost</em>
+  <em>Figure 4: XGBoost</em>
 </p>
 
 Top predictive features: delivery time, estimated delivery time, delivery speed,
