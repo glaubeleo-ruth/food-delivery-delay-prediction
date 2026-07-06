@@ -112,7 +112,7 @@ jupyter notebook notebooks/delivery_delay_analysis.ipynb
 
 ## Method summary
 <p align="center">
-  <img width="500" height="300" alt="XGBoost Diagram" src="assets/contents.png" />
+  <img width="500" height="300" alt="XGBoost Diagram" src="assets/Contents_visualization.png" />
   <br>
   <em>Figure 3: Contents</em>
 </p>
