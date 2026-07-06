@@ -24,6 +24,30 @@ XGBoost decisively outperforms KNN. Although KNN's accuracy looks high, its AUC-
 XGBoost handles the 90.5% / 9.5% class imbalance via `scale_pos_weight` and still keeps
 high precision and recall on both classes.
 
+## How the models work
+
+**KNN (K-Nearest Neighbors)** — classifies an order by looking at the *k* most similar
+past orders (based on distance, traffic, etc.) and taking a majority vote. Simple,
+intuitive, but struggles when one class (delayed orders) is rare — it gets outvoted
+by the majority class.
+
+<p align="center">
+  <img width="500" height="300" alt="KNN Diagram" src="assets/knn_diagram.png" />
+  <br>
+  <em>Figure 1: KNN</em>
+</p>
+
+**XGBoost (Gradient Boosted Trees)** — builds many small decision trees in sequence,
+each one correcting the errors of the last. Handles class imbalance directly via
+`scale_pos_weight`, which tells the model to weigh mistakes on the rare "delayed"
+class more heavily. This is why it substantially outperforms KNN here.
+
+<p align="center">
+  <img width="500" height="300" alt="XGBoost Diagram" src="assets/xgboost_diagram.png" />
+  <br>
+  <em>Figure 2: XGBoost</em>
+</p>
+
 **Top predictive features:** delivery time, estimated delivery time, delivery speed,
 stress score, traffic level.
 
@@ -87,6 +111,11 @@ jupyter notebook notebooks/delivery_delay_analysis.ipynb
 ```
 
 ## Method summary
+<p align="center">
+  <img width="500" height="300" alt="XGBoost Diagram" src="assets/xgboost_diagram.png" />
+  <br>
+  <em>Figure 3: Contents</em>
+</p>
 
 1. **Preprocessing** — drop `order_id`, median-impute numeric NaNs, mode-impute boolean
    NaNs, cast booleans to int.
