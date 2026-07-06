@@ -4,7 +4,7 @@ Machine-learning project that predicts whether a food order will be delivered la
 based on order, traffic, weather, and customer signals. Binary classification on a
 synthetic-but-realistic city-delivery dataset (~15,000 orders, ~9.5% delayed).
 
-Authors: 강민혁 (20211720), 서정우 (20222828)
+Authors: 서정우
 
 ## Overview
  
