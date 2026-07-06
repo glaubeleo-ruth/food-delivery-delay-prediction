@@ -6,7 +6,22 @@ synthetic-but-realistic city-delivery dataset (~15,000 orders, ~9.5% delayed).
 
 Authors: 강민혁 (20211720), 서정우 (20222828)
 
+## Overview
+ 
+This project predicts whether a food delivery will arrive **late**, using details available
+at order time (distance, traffic, weather, time of day). It's a **binary classification**
+task — the model outputs "on-time" or "delayed" for each order.
+ 
+Two models are compared: a simple baseline (**KNN**) and a more powerful model (**XGBoost**).
+XGBoost wins by a wide margin, especially at catching the rare "delayed" cases — the harder
+and more operationally important class to predict.
+
 ## Problem
+<p align="center">
+  <img width="500" height="300" alt="Problem Statement" src="assets/problem_statement.png" />
+  <br>
+  <em>Problem Statement</em>
+</p>
 
 Late deliveries are an operational risk that hurts customer retention. The goal is to
 build a model that flags orders likely to be delayed, given order-time information.
@@ -23,6 +38,22 @@ XGBoost decisively outperforms KNN. Although KNN's accuracy looks high, its AUC-
 
 XGBoost handles the 90.5% / 9.5% class imbalance via `scale_pos_weight` and still keeps
 high precision and recall on both classes.
+
+XGBoost handles the 90.5% / 9.5% class imbalance via `scale_pos_weight` and still keeps
+high precision and recall on both classes.
+ 
+<p align="center">
+  <img width="500" height="300" alt="ROC Curve Comparison" src="assets/roc_curve_comparison.png" />
+  <br>
+  <em>Figure 4: ROC curve — KNN vs XGBoost</em>
+</p>
+<p align="center">
+  <img width="500" height="300" alt="Confusion Matrix" src="assets/confusion_matrix.png" />
+  <br>
+  <em>Figure 5: Confusion matrix — XGBoost predictions</em>
+</p>
+**Top predictive features:** delivery time, estimated delivery time, delivery speed,
+stress score, traffic level.
 
 ## How the models work
 
