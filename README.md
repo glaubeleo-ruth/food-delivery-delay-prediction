@@ -43,12 +43,12 @@ XGBoost handles the 90.5% / 9.5% class imbalance via `scale_pos_weight` and stil
 high precision and recall on both classes.
  
 <p align="center">
-  <img width="500" height="300" alt="ROC Curve Comparison" src="assets/roc_curve_comparison.png" />
+  <img width="800" height="400" alt="ROC Curve Comparison" src="assets/roc_curve_comparison.png" />
   <br>
   <em>Figure 4: ROC curve — KNN vs XGBoost</em>
 </p>
 <p align="center">
-  <img width="500" height="300" alt="Confusion Matrix" src="assets/confusion_matrix.png" />
+  <img width="800" height="600" alt="Confusion Matrix" src="assets/confusion_matrix.png" />
   <br>
   <em>Figure 5: Confusion matrix — XGBoost predictions</em>
 </p>
