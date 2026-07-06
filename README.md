@@ -32,7 +32,7 @@ intuitive, but struggles when one class (delayed orders) is rare — it gets out
 by the majority class.
 
 <p align="center">
-  <img width="500" height="300" alt="KNN Diagram" src="assets/knn_diagram.png" />
+  <img width="500" height="300" alt="KNN Diagram" src="assets/KNN_diagram.png" />
   <br>
   <em>Figure 1: KNN</em>
 </p>
@@ -43,7 +43,7 @@ each one correcting the errors of the last. Handles class imbalance directly via
 class more heavily. This is why it substantially outperforms KNN here.
 
 <p align="center">
-  <img width="500" height="300" alt="XGBoost Diagram" src="assets/xgboost_diagram.png" />
+  <img width="500" height="300" alt="XGBoost Diagram" src="assets/XGBoost_diagram.png" />
   <br>
   <em>Figure 2: XGBoost</em>
 </p>
@@ -112,7 +112,7 @@ jupyter notebook notebooks/delivery_delay_analysis.ipynb
 
 ## Method summary
 <p align="center">
-  <img width="500" height="300" alt="XGBoost Diagram" src="assets/xgboost_diagram.png" />
+  <img width="500" height="300" alt="XGBoost Diagram" src="assets/contents.png" />
   <br>
   <em>Figure 3: Contents</em>
 </p>
